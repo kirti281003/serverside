@@ -3,6 +3,8 @@ const app=express();
 const port=3000;
 const mongoose=require("mongoose");
 const {MONGOURI}=require('./keys');
+require('./models/user');
+mongoose.model("User");
 mongoose.connect(MONGOURI);
 mongoose.connection.on('connected',()=>{
     console.log("Database functional");
